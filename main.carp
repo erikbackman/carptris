@@ -15,8 +15,3 @@
   (let [app (SDLApp.create "Tetris for fishes" 400 300)
         state 0]
     (SDLApp.run-with-callbacks &app SDLApp.quit-on-esc tick draw state)))
-
-
-
-
-
