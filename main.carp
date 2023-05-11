@@ -1,0 +1,22 @@
+(load-and-use SDL)
+(use Pointer)
+
+(Project.config "title" "CarpTris")
+
+(defn tick [state] state)
+
+(defn draw [app rend state]
+  (let [rect (SDL.rect 100 100 100 100)]
+    (do
+      (SDL.set-render-draw-color rend 255 0 0 0)
+      (SDL.render-fill-rect rend (address &rect)))))
+
+(defn main []
+  (let [app (SDLApp.create "Tetris for fishes" 400 300)
+        state 0]
+    (SDLApp.run-with-callbacks &app SDLApp.quit-on-esc tick draw state)))
+
+
+
+
+
